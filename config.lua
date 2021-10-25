@@ -14,14 +14,14 @@ QBBoatshop.PoliceBoatSpawn2 = vector4(4489.18, -4499.84, 5.36, 102.88)
 --airplane garages
 QBBoatshop.Docks = {
     ["Kjeller"] = {
-        label = "kjeller",
+        label = "Flugplatz",
         coords = {
             take = vector3(1743.27, 3299.07, 41.22),
             put = vector4(1739.02, 3282.29, 41.72, 193.0)
         }
     },
     ["Cuba"] = {
-        label = "Cuba",
+        label = "Kuba",
         coords = {
             take = vector3(4456.26, -4465.64, 4.33),
             put = vector4(4486.88, -4456.28, 4.83, 200.0)
@@ -31,7 +31,7 @@ QBBoatshop.Docks = {
 
 QBBoatshop.Depots = {
     [1] = {
-        label = "Flyvakten",
+        label = "Flughafen",
         coords = {
             take = vector3(-951.3, -3055.56, 13.95),
             put = vector4(-957.24, -3031.83, 14.58, 60.0)
