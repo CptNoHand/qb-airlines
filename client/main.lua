@@ -52,27 +52,3 @@ DrawText3D = function(x, y, z, text)
     DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
     ClearDrawOrigin()
 end
-
-RegisterNetEvent('qb-airlines:client:UseJerrycan')
-AddEventHandler('qb-airlines:client:UseJerrycan', function()
-    local ped = PlayerPedId()
-    local boat = IsPedInAnyPlane(ped)
-    if boat then
-        local curVeh = GetVehiclePedIsIn(ped, false)
-        QBCore.Functions.Progressbar("reful_boat", "Refueling Airplane ..", 20000, false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {}, {}, {}, function() -- Done
-            exports['LegacyFuel']:SetFuel(curVeh, 100)
-            QBCore.Functions.Notify('The Airplane has been refueled', 'success')
-            TriggerServerEvent('qb-airlines:server:RemoveItem', 'jerry_can', 1)
-            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['jerry_can'], "remove")
-        end, function() -- Cancel
-            QBCore.Functions.Notify('Refueling has been canceled!', 'error')
-        end)
-    else
-        QBCore.Functions.Notify('You are not in a airplane', 'error')
-    end
-end)

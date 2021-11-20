@@ -57,12 +57,6 @@ function InsertBoat(boatModel, Player, plate)
         {Player.PlayerData.citizenid, boatModel, plate})
 end
 
-QBCore.Functions.CreateUseableItem("jerry_can", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-
-    TriggerClientEvent("qb-airlines:client:UseJerrycan", source)
-end)
-
 RegisterServerEvent('qb-airlines:server:RemoveItem')
 AddEventHandler('qb-airlines:server:RemoveItem', function(item, amount)
     local src = source
